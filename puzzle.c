@@ -74,9 +74,8 @@ validation_message validate_input(char* word, game_state state, char* word_bank)
 
     // Checks to see if the word is in words.txt
     while(fgets(line, state.word_length + 1, fp)) {
-
         // Returns true if it is
-        if(strcmp(line, lower_word) == 0) {
+        if(system_indifferent_strcmp(line, lower_word, state.word_length)) {
             valid.valid = true;
         }
     }

@@ -43,3 +43,11 @@ int encode_word(char* word, int length) {
 
     return map;
 }
+
+// Assumes strings are of proper length
+bool system_indifferent_strcmp(char* str1, char* str2, int length) {
+    for(int i = 0; i < length; i++) {
+        if(str1[i] != str2[i]) return false;
+    }
+    return true;
+}
