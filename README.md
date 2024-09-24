@@ -1,4 +1,4 @@
-# Linux-Terminal-Wordle-Clone
+# Terminal-Wordle-Clone
 A Wordle clone that runs directly in your Linux terminal, written entirely in C.
 This also works on Windows 10 and Windows 11.
 
