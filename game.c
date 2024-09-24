@@ -1,6 +1,26 @@
 #include "wordle.h"
 
 int main(int argc, char **argv) {
+
+    // Enable Virtual Terminal Processing for Windows systems
+    #ifdef _WIN32
+        // Code adapted directly from Microsoft documentation
+        HANDLE hOut = GetStdHandle(STD_OUTPUT_HANDLE);
+        if(hOut == INVALID_HANDLE_VALUE) {
+            return GetLastError();
+        }
+
+        DWORD dwMode = 0;
+        if(!GetConsoleMode(hOut, &dwMode)) {
+            return GetLastError();
+        }
+
+        dwMode |= ENABLE_VIRTUAL_TERMINAL_PROCESSING;
+        if(!SetConsoleMode(hOut, dwMode)) {
+            return GetLastError();
+        }
+    #endif
+
     game_state state;
     bool custom = false; // for input validation
 
@@ -73,7 +93,7 @@ int main(int argc, char **argv) {
             break;
     }
 
-    system("clear"); // Clears the screen for the game
+    system(CLEAR); // Clears the screen for the game
     
     if(argc == 1) { // Only possible if no arguments are provided
         printf("Welcome to %sWORDLE!%s\n\n", BOLD, DEFAULT);
