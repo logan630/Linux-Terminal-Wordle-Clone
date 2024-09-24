@@ -5,6 +5,20 @@
 #include <stdbool.h> // bool
 #include <ctype.h> // tolower, toupper
 
+// In Windows 10 onwards, ANSI escape sequences work, but must be manually enabled
+// Below are the necessary definitions and required header files
+// CLEAR just accounts for the difference in syscall names between UNIX-based systems and Windows systems
+#ifdef _WIN32
+    #include <wchar.h>
+    #include <windows.h>
+    #define CLEAR "cls"
+    #ifndef ENABLE_VIRTUAL_TERMINAL_PROCESSING
+        #define ENABLE_VIRTUAL_TERMINAL_PROCESSING 0x0004
+    #endif
+#else
+    #define CLEAR "clear"
+#endif
+
 #define FILE_NAME "./word_banks/words.txt" // Default word bank
 
 // Special values of the color type
@@ -99,3 +113,6 @@ int encode(char);
 
 // Summarizes an entire word in a single bitmask
 int encode_word(char*, int);
+
+// Strcmp not working on Windows. This is a temporary fix
+bool system_indifferent_strcmp(char*, char*, int);
