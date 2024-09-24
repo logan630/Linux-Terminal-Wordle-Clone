@@ -113,3 +113,6 @@ int encode(char);
 
 // Summarizes an entire word in a single bitmask
 int encode_word(char*, int);
+
+// Strcmp not working on Windows. This is a temporary fix
+bool system_indifferent_strcmp(char*, char*, int);

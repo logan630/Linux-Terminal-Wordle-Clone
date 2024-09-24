@@ -1,6 +1,13 @@
+ifeq ($(OS),Windows_NT)
+RM = del /Q /F
+FILE = wordle.exe
+else
+RM = rm -rf
+FILE = wordle
+endif
+
 CC = gcc
 CFLAGS = -c -Wall -Werror -pedantic-errors
-FILE = wordle
 
 all: wordle
 all: clean
@@ -13,6 +20,6 @@ puzzle.o: puzzle.c
 wordle_utils.o: utils.c
 	$(CC) $(CFLAGS) utils.c
 clean:
-	rm -rf *.o
+	-$(RM) *.o
 zip:
 	zip wordle.zip wordle word_banks
