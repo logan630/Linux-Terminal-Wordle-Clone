@@ -29,8 +29,7 @@ WORD M
 ```
 
 - The first line of the text file is a whole number, `L`, equal to the number of letters found in each word.
-- The second line of the text file is another whole number, `N`, where `N` is less than or equal to the number of words in the word bank\*
-  \* This is **not** accounted for by the program and must be verified by the author of the word bank.
+- The second line of the text file is another whole number, `N`, where `N` is less than or equal to the number of words in the word bank. This is **not** accounted for by the program and must be verified by the author of the word bank.
   - The first `N` words in the word bank will be what the game chooses from when it picks a target word for that round
   - The remaining `M` words comprise the rest of the valid guesses. If a player guesses a word not found in the active word bank, the game rejects it.
  
