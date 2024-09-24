@@ -1,5 +1,6 @@
 # Linux-Terminal-Wordle-Clone
 A Wordle clone that runs directly in your Linux terminal, written entirely in C.
+As of now, this will not work on Windows.
 
 ## How To Use
 Clone the repository to your local machine, then run `make` to compile.
