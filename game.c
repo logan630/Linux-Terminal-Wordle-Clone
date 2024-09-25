@@ -119,7 +119,6 @@ int main(int argc, char **argv) {
     }
 
     printf("Run the command \"wordle -h\" for help.\n\n");
-    // printf("%s\n\n", state.target);
 
     // Tries to allow the user to provide invalid guesses without crashing wordle
     char* guess = (char*) malloc(100 * (state.word_length + 1) + 1);

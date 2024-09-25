@@ -21,5 +21,7 @@ wordle_utils.o: utils.c
 	$(CC) $(CFLAGS) utils.c
 clean:
 	-$(RM) *.o
+	
+# DOES NOT WORK ON WINDOWS - Windows has no command-line zip utility
 zip:
-	zip wordle.zip wordle word_banks
+	zip -r wordle.zip wordle word_banks
