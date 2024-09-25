@@ -17,7 +17,7 @@ game.o: game.c
 	$(CC) $(CFLAGS) game.c	
 puzzle.o: puzzle.c
 	$(CC) $(CFLAGS) puzzle.c
-wordle_utils.o: utils.c
+utils.o: utils.c
 	$(CC) $(CFLAGS) utils.c
 clean:
 	-$(RM) *.o
